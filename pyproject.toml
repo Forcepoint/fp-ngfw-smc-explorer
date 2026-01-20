@@ -1,0 +1,31 @@
+[project]
+name = "smc-explorer"
+version = "1.0.0"
+description = "shows resources configured in a forcepoint smc"
+readme = "README.md"
+authors = [
+
+]
+requires-python = ">=3.10"
+dependencies = [
+    "click>=8.3.0",
+    "jmespath>=1.0.1",
+    "requests>=2.32.5",
+]
+
+[project.scripts]
+smc-explorer = "smc_explorer:cli.main"
+
+[build-system]
+requires = ["uv_build>=0.9.6,<0.10.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.2",
+]
+
+[tool.pytest.ini_options]
+pythonpath = [
+  "src"
+]
