@@ -1,6 +1,8 @@
 [project]
 name = "smc-explorer"
-version = "1.0.0"
+dynamic = ["version"]
+# version = "1.0.0"
+
 description = "shows resources configured in a forcepoint smc"
 readme = "README.md"
 authors = [
@@ -17,11 +19,15 @@ dependencies = [
 smc-explorer = "smc_explorer:cli.main"
 
 [build-system]
-requires = ["uv_build>=0.9.6,<0.10.0"]
-build-backend = "uv_build"
+requires = ["hatchling", "versioningit"]
+build-backend = "hatchling.build"
+
+[tool.hatch.version]
+source = "versioningit"
 
 [dependency-groups]
 dev = [
+    "pipx>=1.8.0",
     "pytest>=9.0.2",
 ]
 
@@ -29,3 +35,4 @@ dev = [
 pythonpath = [
   "src"
 ]
+[tool.setuptools_scm]
