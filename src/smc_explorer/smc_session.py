@@ -171,9 +171,6 @@ class SMCSession(object):
         if not self.verify_ssl:
             verify=False
 
-        if not self.verify_ssl:
-            logger.warning("ssl verification is disabled")
-
         logger.debug("request: method=%s, url=%s", method, url)
         res = self._session.request(
             method,
