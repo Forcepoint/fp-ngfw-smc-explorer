@@ -232,6 +232,7 @@ def list(hname):
 def show(hname, fmt, raw, hcl2, output, new_name, skip_attrs, keep_attrs, remove_falsy):
     """Retrieve an SMC element with its hierarchical name (hname) and display it."""
     smc_client, session = get_smc_client()
+    hname = hname.strip("/")
 
     try:
         session.login()
