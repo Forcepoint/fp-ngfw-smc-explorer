@@ -56,6 +56,7 @@ class SMCClient(object):
         :rtype: SMCElementJson
 
         """
+        hname = hname.strip("/")
         try:
             target_href = resolve_hname(self._session, hname)
         except ResolveError as err:
